@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mobilecloudcomputing-dev-171643-authRole",
+            "UnauthRoleArn": "arn:aws:iam::597196395657:role/amplify-mobilecloudcomputing-dev-171643-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::597196395657:role/amplify-mobilecloudcomputing-dev-171643-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-mobilecloudcomputing-dev-171643-deployment",
+            "UnauthRoleName": "amplify-mobilecloudcomputing-dev-171643-unauthRole",
+            "StackName": "amplify-mobilecloudcomputing-dev-171643",
+            "StackId": "arn:aws:cloudformation:eu-west-1:597196395657:stack/amplify-mobilecloudcomputing-dev-171643/ee018c80-bf06-11eb-a481-06ff7437936b",
+            "AmplifyAppId": "d6tj0cv7vuqbn"
+        },
+        "categories": {
+            "auth": {
+                "mobilecloudcomputing822d7dae": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d6tj0cv7vuqbn",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

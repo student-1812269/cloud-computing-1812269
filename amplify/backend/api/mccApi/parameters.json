@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "mccApi",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmobilecloudcomputing822d7dae",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

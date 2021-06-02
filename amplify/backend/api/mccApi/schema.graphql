@@ -1,0 +1,41 @@
+type User @model {
+  id: ID!
+  username: String!
+  status: String
+  messageThreadUser: [MessageThreadUser] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type MessageThreadUser
+@model
+@key(name: "byUser", fields: ["userId", "messageThreadId"])
+@key(name: "byMessageThread", fields: ["messageThreadId", "userId"]) {
+  id: ID!
+  userId: ID!
+  messageThreadId: ID!
+  user: User @connection(fields: ["userId"])
+  messageThread: MessageThread @connection(fields: ["messageThreadId"])
+}
+
+type MessageThread @model {
+  id: ID!
+  messageThreadUsers: [MessageThreadUser] @connection(keyName: "byMessageThread", fields: ["id"])
+  messages: [Message]  @connection(keyName: "byMessageThread", fields: ["id"])
+  lastMessageId: ID!
+  lastMessage: Message @connection(fields: ["lastMessageId"])
+}
+
+type Message
+@model
+@key(
+  name: "byMessageThread",
+  fields: ["messageThreadId", "createdAt"],
+  queryField: "messagesByMessageThread") {
+  id: ID!
+  createdAt: String!
+  body: String!
+  imageUrl: String
+  userId: ID!
+  messageThreadId: ID!
+  user: User @connection(fields: ["userId"])
+  messageThread: MessageThread @connection(fields: ["messageThreadId"])
+}
